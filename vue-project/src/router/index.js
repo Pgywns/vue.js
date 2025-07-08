@@ -1,6 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import DataBinding from "../views/DataBinding.vue";
+import DataBindingAttr from "../views/DataBindingAttr.vue";
+import DataBindingList from "../views/DataBindingList.vue";
+import EventClick from "../views/EventClick.vue";
+import ShowVue from "../views/ShowVue.vue";
 
 const routes = [
   {
@@ -21,6 +25,26 @@ const routes = [
     path: "/data",
     name: "data",
     component: DataBinding,
+  },
+  {
+    path: "/dataAttr",
+    name: "dataAttr",
+    component: DataBindingAttr,
+  },
+  {
+    path: "/dataList",
+    name: "dataList",
+    component: DataBindingList,
+  },
+  {
+    path: "/eventClick",
+    name: "eventClick",
+    component: EventClick,
+  },
+  {
+    path: "/showVue",
+    name: "showVue",
+    component: ShowVue,
   },
 ];
 

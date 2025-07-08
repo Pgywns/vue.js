@@ -2,7 +2,11 @@
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
-    <router-link to="/data">Data Link</router-link>
+    <router-link to="/data">Data Link</router-link> |
+    <router-link to="/dataAttr">Data Attr</router-link> |
+    <router-link to="/dataList">Data List</router-link> |
+    <router-link to="/eventClick">Evt Click</router-link> |
+    <router-link to="/showVue">Show Vue</router-link>
   </nav>
   <router-view />
 </template>
