@@ -1,7 +1,7 @@
 <template>
   <h3>DataBindingAttr.vue</h3>
   <p>attribute 바인딩하기</p>
-  <!-- v-bind 생략가능 -->
+  <!-- attribute에 바인딩은 v-bind로 함 (생략가능) -->
   <img v-bind:src="imgSrc" :width="imgWidth" />
   <p>
     <input type="number" v-model.number="widVal" />

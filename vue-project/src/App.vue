@@ -6,10 +6,25 @@
     <router-link to="/dataAttr">Data Attr</router-link> |
     <router-link to="/dataList">Data List</router-link> |
     <router-link to="/eventClick">Evt Click</router-link> |
-    <router-link to="/showVue">Show Vue</router-link>
+    <router-link to="/showVue">Show Vue</router-link> |
+    <router-link to="/computedVue">Computed Vue</router-link> |
+    <router-link to="/watchVue">Watch Vue</router-link> |
+    <router-link to="/todoVue">Todo Vue</router-link> |
+    <router-link to="/nestedComponent">NestedComponent Vue</router-link> ||
+    <router-link to="/parentComponent">ParentComponent Vue</router-link>
   </nav>
   <router-view />
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      msg: "",
+    };
+  },
+};
+</script>
 
 <style>
 #app {

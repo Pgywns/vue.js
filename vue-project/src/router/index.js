@@ -5,6 +5,11 @@ import DataBindingAttr from "../views/DataBindingAttr.vue";
 import DataBindingList from "../views/DataBindingList.vue";
 import EventClick from "../views/EventClick.vue";
 import ShowVue from "../views/ShowVue.vue";
+import ComputedView from "../views/ComputedView.vue";
+import WatchView from "../views/WatchView.vue";
+import TodoView from "../views/TodoView.vue";
+import NestedComponent from "../views/NestedComponent.vue";
+import ParentComponent from "../views/ParentComponent.vue";
 
 const routes = [
   {
@@ -45,6 +50,31 @@ const routes = [
     path: "/showVue",
     name: "showVue",
     component: ShowVue,
+  },
+  {
+    path: "/computedVue",
+    name: "conputedVue",
+    component: ComputedView,
+  },
+  {
+    path: "/watchVue",
+    name: "watchVue",
+    component: WatchView,
+  },
+  {
+    path: "/todoVue",
+    name: "todoVue",
+    component: TodoView,
+  },
+  {
+    path: "/nestedComponent",
+    name: "nestedComponent",
+    component: NestedComponent,
+  },
+  {
+    path: "/parentComponent",
+    name: "parentComponent",
+    component: ParentComponent,
   },
 ];
 
