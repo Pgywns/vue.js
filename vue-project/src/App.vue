@@ -6,22 +6,70 @@
     <router-link to="/dataAttr">Data Attr</router-link> |
     <router-link to="/dataList">Data List</router-link> |
     <router-link to="/eventClick">Evt Click</router-link> |
-    <router-link to="/showVue">Show Vue</router-link> |
-    <router-link to="/computedVue">Computed Vue</router-link> |
-    <router-link to="/watchVue">Watch Vue</router-link> |
-    <router-link to="/todoVue">Todo Vue</router-link> |
-    <router-link to="/nestedComponent">NestedComponent Vue</router-link> ||
-    <router-link to="/parentComponent">ParentComponent Vue</router-link>
+    <router-link to="/showVue">Show</router-link> |
+    <router-link to="/computedVue">Computed</router-link> |
+    <router-link to="/watchVue">Watch</router-link> |
+    <router-link to="/todoVue">Todo</router-link> |
+    <router-link to="/nestedComponent">NestedComponent</router-link> |
+    <router-link to="/parentComponent">ParentComponent</router-link> |
+    <router-link to="/parentButton">ParentButton</router-link> |
+    <router-link to="/todoList">TodoList</router-link>
   </nav>
   <router-view />
+
+  <!-- appUse: true로 하면 화면에 표시 -->
+  <div class="appUse" v-if="appUse">
+    <h3>App.vue(부모컴포넌트 - Provider)</h3>
+    <p>
+      제공자 이름: <strong>{{ username }}</strong>
+    </p>
+    <MiddleComponent />
+  </div>
+
+  <div class="appUse" v-if="appUse">
+    <h1>🛍️ 장바구니 예제</h1>
+    <ProductList />
+    <Cart />
+  </div>
 </template>
 
 <script>
+import MiddleComponent from "./views/MiddleComponent.vue";
+import ProductList from "./components/ProductList.vue";
+import Cart from "./components/Cart.vue";
+
 export default {
+  name: "App",
+  components: { MiddleComponent, ProductList, Cart },
   data() {
     return {
       msg: "",
+      username: "홍길동",
+      cart: [],
+      appUse: false,
     };
+  },
+  provide() {
+    // 제공하는 값, 함수
+    return {
+      providerUsername: this.username,
+      updateUserName: this.changeUserName,
+      addToCart: this.addToCart,
+      cart: this.cart,
+    };
+  },
+  methods: {
+    changeUserName(name) {
+      this.username = name;
+    },
+    addToCart(product) {
+      const existing = this.cart.find((item) => item.id === product.id);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        this.cart.push({ ...product, quantity: 1 });
+      }
+    },
   },
 };
 </script>

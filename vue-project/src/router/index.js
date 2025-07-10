@@ -10,6 +10,8 @@ import WatchView from "../views/WatchView.vue";
 import TodoView from "../views/TodoView.vue";
 import NestedComponent from "../views/NestedComponent.vue";
 import ParentComponent from "../views/ParentComponent.vue";
+import ParentButton from "../views/ParentButton.vue";
+import TodoList from "../views/TodoListVuex.vue";
 
 const routes = [
   {
@@ -75,6 +77,16 @@ const routes = [
     path: "/parentComponent",
     name: "parentComponent",
     component: ParentComponent,
+  },
+  {
+    path: "/parentButton",
+    name: "parentButton",
+    component: ParentButton,
+  },
+  {
+    path: "/todoList",
+    name: "todoList",
+    component: TodoList,
   },
 ];
 

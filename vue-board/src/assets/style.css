@@ -1,0 +1,175 @@
+/* src/assets/style.css */
+
+/* ====== Reset & 기본 ====== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans KR", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* a 기본 스타일 */
+a {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #21618c;
+  text-decoration: underline;
+}
+
+/* 버튼 공통 스타일 */
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+button:hover {
+  background-color: #21618c;
+}
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
+}
+
+/* 컨테이너 공통 */
+.container {
+  max-width: 720px;
+  background: white;
+  margin: 40px auto;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 스타일 */
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 25px;
+}
+
+/* ====== PostList 스타일 ====== */
+.list-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-container li {
+  background-color: #f4f6f8;
+  margin-bottom: 14px;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.list-container li:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.list-container li a {
+  font-size: 18px;
+  font-weight: 600;
+  display: block;
+  color: #34495e;
+}
+
+/* 새 글 작성 버튼 */
+.list-container > button {
+  display: block;
+  margin: 0 auto 30px auto;
+  width: 140px;
+}
+
+/* ====== PostDetail 스타일 ====== */
+.detail-container p {
+  font-size: 17px;
+  color: #555;
+  margin-bottom: 40px;
+  white-space: pre-wrap;
+}
+
+/* 상세화면 버튼 */
+.detail-container button {
+  margin-right: 15px;
+}
+
+/* 삭제 버튼 별도 스타일 */
+.delete-btn {
+  background-color: #e74c3c;
+}
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* ====== PostForm 스타일 ====== */
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container input,
+.form-container textarea {
+  font-size: 16px;
+  padding: 14px 18px;
+  margin-bottom: 22px;
+  border-radius: 8px;
+  border: 1.7px solid #ccc;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.form-container button {
+  width: 160px;
+  align-self: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* ====== 반응형 ====== */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+    margin: 20px 12px;
+  }
+
+  .list-container li {
+    padding: 12px 18px;
+    font-size: 16px;
+  }
+
+  .form-container input,
+  .form-container textarea {
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+
+  button {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+}
